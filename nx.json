@@ -13,6 +13,21 @@
     },
     "pegasus": {
       "tags": []
+    },
+    "shared": {
+      "tags": []
+    },
+    "nomina": {
+      "tags": []
+    },
+    "contabilidad": {
+      "tags": []
+    },
+    "factura": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
     }
   }
 }

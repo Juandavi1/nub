@@ -118,6 +118,131 @@
           }
         }
       }
+    },
+    "shared": {
+      "root": "libs/shared",
+      "sourceRoot": "libs/shared/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/tsconfig.lib.json",
+              "libs/shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/jest.config.js",
+            "tsConfig": "libs/shared/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "nomina": {
+      "root": "libs/nomina",
+      "sourceRoot": "libs/nomina/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nomina/tsconfig.lib.json",
+              "libs/nomina/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/nomina/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nomina/jest.config.js",
+            "tsConfig": "libs/nomina/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "contabilidad": {
+      "root": "libs/contabilidad",
+      "sourceRoot": "libs/contabilidad/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/contabilidad/tsconfig.lib.json",
+              "libs/contabilidad/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/contabilidad/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/contabilidad/jest.config.js",
+            "tsConfig": "libs/contabilidad/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "factura": {
+      "root": "libs/factura",
+      "sourceRoot": "libs/factura/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/factura/tsconfig.lib.json",
+              "libs/factura/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/factura/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/factura/jest.config.js",
+            "tsConfig": "libs/factura/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ui": {
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui/tsconfig.lib.json",
+              "libs/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "tsConfig": "libs/ui/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
