@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "projects": {
+    "pegasus": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/pegasus",
+      "sourceRoot": "apps/pegasus/src",
+      "prefix": "nubox-test",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/pegasus",
+            "index": "apps/pegasus/src/index.html",
+            "main": "apps/pegasus/src/main.ts",
+            "polyfills": "apps/pegasus/src/polyfills.ts",
+            "tsConfig": "apps/pegasus/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/pegasus/src/favicon.ico",
+              "apps/pegasus/src/assets"
+            ],
+            "styles": ["apps/pegasus/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pegasus/src/environments/environment.ts",
+                  "with": "apps/pegasus/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pegasus:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pegasus:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pegasus:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pegasus/tsconfig.app.json",
+              "apps/pegasus/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/pegasus/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/pegasus/jest.config.js",
+            "tsConfig": "apps/pegasus/tsconfig.spec.json",
+            "setupFile": "apps/pegasus/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "pegasus-e2e": {
+      "root": "apps/pegasus-e2e",
+      "sourceRoot": "apps/pegasus-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/pegasus-e2e/cypress.json",
+            "tsConfig": "apps/pegasus-e2e/tsconfig.e2e.json",
+            "devServerTarget": "pegasus:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pegasus:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/pegasus-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pegasus-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "pegasus"
+}
