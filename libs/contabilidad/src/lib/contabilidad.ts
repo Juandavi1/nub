@@ -1,6 +1,6 @@
 import { Shared } from '@nubox-test/shared';
 
-export class Contabilidad {
+export class Xd {
   a (){
     return new Shared()
   }

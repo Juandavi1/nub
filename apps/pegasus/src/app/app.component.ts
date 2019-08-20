@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Contabilidad } from '@nubox-test/contabilidad';
 import { Factura } from '@nubox-test/factura';
 import { Nomina } from '@nubox-test/nomina';
+import { Xd } from '@nubox-test/contabilidad';
 
 @Component({
   selector: 'nubox-test-root',
@@ -12,9 +12,8 @@ export class AppComponent {
   title = 'pegasus';
 
   constructor(){
-    const a = new Contabilidad();
     const b = new Factura();
     const c = new Nomina();
-    //const u = new
+    const xd = new Xd()
   }
 }

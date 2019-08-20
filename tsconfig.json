@@ -19,8 +19,7 @@
       "@nubox-test/shared": ["libs/shared/src/index.ts"],
       "@nubox-test/nomina": ["libs/nomina/src/index.ts"],
       "@nubox-test/contabilidad": ["libs/contabilidad/src/index.ts"],
-      "@nubox-test/factura": ["libs/factura/src/index.ts"],
-      "@nubox-test/ui": ["libs/ui/src/index.ts"]
+      "@nubox-test/factura": ["libs/factura/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

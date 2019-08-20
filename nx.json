@@ -9,25 +9,27 @@
   },
   "projects": {
     "pegasus-e2e": {
-      "tags": []
+      "tags": ["scope:client"],
+      "implicitDependencies": ["pegasus"]
     },
     "pegasus": {
-      "tags": []
+      "tags": [ "scope:client" ],
+      "implicitDependencies": ["nomina","contabilidad","factura"]
     },
     "shared": {
-      "tags": []
+      "tags": ["scope:shared"]
     },
     "nomina": {
-      "tags": []
+      "tags": ["scope:libs"],
+      "implicitDependencies": ["shared"]
     },
     "contabilidad": {
-      "tags": []
+      "tags": ["scope:libs"],
+      "implicitDependencies": ["shared"]
     },
     "factura": {
-      "tags": []
-    },
-    "ui": {
-      "tags": []
+      "tags": ["scope:libs"],
+      "implicitDependencies": ["shared"]
     }
   }
 }

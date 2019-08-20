@@ -76,5 +76,25 @@
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
-  }
+  },
+  "nx-enforce-module-boundaries": [
+    true,
+    {
+      "allow": [],
+      "depConstraints": [
+        {
+          "sourceTag": "scope:client",
+          "onlyDependOnLibsWithTags": ["scope:libs"]
+        },
+        {
+          "sourceTag": "scope:libs",
+          "onlyDependOnLibsWithTags": ["scope:shared"]
+        },
+        {
+          "sourceTag": "scope:shared",
+          "onlyDependOnLibsWithTags": ["scope:shared"]
+        }
+      ]
+    }
+  ]
 }

@@ -1,1 +1,2 @@
-export * from './lib/contabilidad';
+export * from './lib/contabilidad/contabilidad.module';
+export * from './lib/contabilidad'
